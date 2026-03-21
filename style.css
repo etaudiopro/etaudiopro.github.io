@@ -1,0 +1,429 @@
+/* =========================================
+   PUNK ROCK DIY ESTHETIC V2.0
+   ========================================= */
+
+/* Reset basic formatting */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+/* Base Color Palette */
+:root {
+    --bg-black: #000000;
+    --paper-white: #f5f5f5; /* Gritty off-white */
+    --punk-red: #d80000; /* High-contrast violent red */
+    --text-main: #f5f5f5;
+    --grey-distressed: #2a2a2a;
+}
+
+/* Typography Setup */
+body {
+    font-family: 'Special Elite', typewriter, serif;
+    background-color: var(--bg-black);
+    color: var(--text-main);
+    line-height: 1.5;
+}
+
+/* Heading Typography */
+h1, h2, h3, h4 {
+    font-family: 'Russo One', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-main);
+}
+
+/* General Link styling (for NAV, etc.) */
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.2s ease;
+}
+
+/* Mobile Responsiveness Magic */
+@media (max-width: 600px) {
+    [class*="-grid"] {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* =========================================
+   HOMEPAGE SPECIFIC (INDEX.HTML)
+   ========================================= */
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+}
+
+.hero-content {
+    padding: 2rem;
+    max-width: 700px;
+}
+
+.hero-content h1 {
+    font-size: 5rem;
+    line-height: 0.9;
+    margin-bottom: 1rem;
+    /* Added a violent red drop shadow for the 'xeroxed' look */
+    text-shadow: 4px 4px 0 var(--punk-red);
+}
+
+.hero-content .subtitle {
+    font-size: 1.4rem;
+    margin-bottom: 4rem;
+    background-color: var(--punk-red);
+    color: #fff;
+    padding: 0.5rem 1rem;
+    display: inline-block;
+}
+
+.button-group {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+/* Universal Button Styles */
+a.primary-btn, a.secondary-btn {
+    font-family: 'Russo One', sans-serif;
+    font-size: 1.1rem;
+    padding: 1.2rem 2.5rem;
+    text-transform: uppercase;
+    transition: all 0.1s;
+    /* Simulate a duct-tape edge */
+    border: 3px solid transparent; 
+}
+
+/* The Studio Button (Filled Black, Red Hover) */
+.primary-btn {
+    background-color: #fff;
+    color: #000;
+}
+
+.primary-btn:hover {
+    background-color: var(--punk-red);
+    color: #fff;
+    transform: rotate(-2deg); /* Added raw wobble */
+}
+
+/* The Resume Button (Outline, Black Hover) */
+.secondary-btn {
+    background-color: transparent;
+    border: 3px solid #fff !important;
+    color: #fff;
+}
+
+.secondary-btn:hover {
+    background-color: #fff;
+    color: #000;
+    transform: rotate(2deg);
+}
+
+@media (max-width: 600px) {
+    .hero-content h1 { font-size: 3rem; }
+    .button-group { flex-direction: column; gap: 0.5rem; }
+}
+
+/* =========================================
+   RESUME PAGE (RESUME.HTML) - GRITTY DIY ZINE STYLE
+   ========================================= */
+
+.resume-body {
+    padding: 2rem 1rem;
+}
+
+.resume-nav {
+    max-width: 800px;
+    margin: 0 auto 1rem auto;
+}
+
+.back-btn {
+    font-family: 'Russo One', sans-serif;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    color: var(--punk-red);
+}
+
+.back-btn:hover { color: #fff; }
+
+.resume-container {
+    background-color: var(--paper-white); /* Off-white page */
+    color: #000; /* Strict black text on page */
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 4rem;
+    /* Jagged border for raw effect */
+    border: 10px solid #000; 
+}
+
+.resume-header h1 {
+    font-size: 3.5rem;
+    color: #000;
+}
+
+.resume-header p {
+    font-weight: bold;
+    color: var(--punk-red);
+}
+
+.contact-info {
+    font-weight: normal !important;
+    color: #000 !important;
+}
+
+.resume-divider {
+    border: 0;
+    height: 4px;
+    background-color: #000;
+    margin: 1.5rem 0;
+}
+
+.resume-section h2 {
+    color: #fff;
+    background-color: #000; /* Reversing colors for headers */
+    padding: 0.5rem 1rem;
+    display: inline-block;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.job-block {
+    margin-bottom: 1.5rem;
+}
+
+.job-header {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+}
+
+.company {
+    font-style: italic;
+    color: var(--punk-red);
+    margin-bottom: 0.5rem;
+}
+
+.resume-section ul {
+    list-style-type: square;
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 600px) {
+    .resume-container { padding: 2rem 1rem; }
+    .job-header { flex-direction: column; }
+}
+
+/* =========================================
+   STUDIO PAGE (STUDIO.HTML) - HIGH CONTRAST RAW SETUP
+   ========================================= */
+
+.studio-body {
+    padding: 2rem 1rem;
+}
+
+.studio-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.studio-nav {
+    max-width: 1000px;
+    margin: 0 auto 2rem auto;
+}
+
+.studio-header {
+    margin-bottom: 3rem;
+    border-bottom: 4px solid var(--grey-distressed);
+    padding-bottom: 2rem;
+}
+
+.studio-header h1 {
+    font-size: 4rem;
+    line-height: 1;
+    color: var(--text-main);
+    margin-bottom: 0.5rem;
+}
+
+.studio-header p {
+    font-size: 1.2rem;
+    color: var(--punk-red);
+    font-weight: bold;
+}
+
+.studio-section h2 {
+    color: #fff;
+    background-color: var(--punk-red);
+    padding: 0.5rem 1rem;
+    display: inline-block;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+}
+
+/* Audio Player */
+.audio-player-box {
+    background-color: var(--grey-distressed);
+    border: 5px solid var(--punk-red);
+    padding: 3rem;
+    text-align: center;
+}
+
+/* Grids */
+.services-grid, .gear-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.service-card {
+    background-color: var(--grey-distressed);
+    padding: 2rem;
+    /* Duct-tape effect border */
+    border: 4px solid #fff; 
+    transition: transform 0.1s;
+}
+
+.service-card:hover { transform: scale(1.02); }
+
+.service-card h3 { color: var(--punk-red); }
+
+/* =========================================
+   INTERACTIVE GEAR CAROUSEL (Updated Esthetic)
+   ========================================= */
+
+.gear-showcase-box {
+    background-color: #fff; /* White box for high contrast gear showcase */
+    padding: 1rem;
+    border: 5px solid #000;
+    text-align: center;
+}
+
+.gear-showcase-box h3 {
+    margin-bottom: 1rem;
+    color: #000; /* Black heading on white box */
+    font-size: 1.2rem;
+}
+
+.showcase-gallery {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 0; 
+    /* Strictly ZERO padding on the left and right so the math is perfect */
+    padding: 0 0 1rem 0; 
+    scrollbar-width: thin; 
+    scrollbar-color: var(--punk-red) #000;
+}
+
+/* Customizing the scrollbar for Chrome/Safari */
+.showcase-gallery::-webkit-scrollbar {
+    height: 10px;
+}
+.showcase-gallery::-webkit-scrollbar-track {
+    background: #000; 
+}
+.showcase-gallery::-webkit-scrollbar-thumb {
+    background: var(--punk-red); 
+    border-radius: 0; 
+}
+
+/* The photos inside the gallery */
+.showcase-gallery img {
+    scroll-snap-align: center;
+    flex: 0 0 100%; /* Locks the image box to exactly 100% of the screen width */
+    width: 100%;
+    height: 350px;
+    object-fit: contain; /* Prevents the image from being cropped */
+    box-sizing: border-box;
+    padding: 0 1rem; /* Adds breathing room INSIDE the box, not outside */
+    background-color: transparent; 
+}
+
+.showcase-caption {
+    margin-top: 1rem;
+    font-family: 'Russo One', sans-serif;
+    font-size: 1.3rem;
+    background-color: #000;
+    color: #fff;
+    padding: 0.5rem;
+    text-transform: uppercase;
+}
+
+/* =========================================
+   DARK THEME CONTACT FORM (High Contrast Red)
+   ========================================= */
+
+.form-section {
+    background-color: var(--grey-distressed);
+    padding: 3rem;
+    border: 5px solid var(--punk-red);
+}
+
+.booking-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.input-group label {
+    font-family: 'Russo One', sans-serif;
+    font-size: 1rem;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.input-group input, 
+.input-group select, 
+.input-group textarea {
+    width: 100%;
+    padding: 1rem;
+    background-color: #000;
+    border: 3px solid #fff;
+    color: #fff;
+    font-family: 'Special Elite', serif;
+    font-size: 1.1rem;
+}
+
+.input-group input:focus, 
+.input-group textarea:focus {
+    outline: none;
+    border-color: var(--punk-red);
+}
+
+.submit-btn {
+    align-self: flex-start;
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    .studio-header h1 { font-size: 2.5rem; }
+    .form-section { padding: 1.5rem; }
+    .submit-btn { width: 100%; }
+}
+/* =========================================
+   EXTRA SECTION SPACING
+   ========================================= */
+
+.studio-section {
+    margin-bottom: 8rem; /* Pushes each section much further down */
+}
+
+/* Adds a little extra space under the main header too */
+.studio-header {
+    margin-bottom: 5rem; 
+}
+/* =========================================
+   RESUME VISIBILITY FIX
+   ========================================= */
+
+.resume-container h3, 
+.resume-container h4 {
+    color: #000;
+}
